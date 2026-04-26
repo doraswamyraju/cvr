@@ -11,16 +11,21 @@ const DashboardLayout = ({ role, navigation }) => {
           <h2>{role} Portal</h2>
         </div>
         <nav className="sidebar-nav">
-          {navigation.map((item) => (
-            <NavLink 
-              key={item.path} 
-              to={item.path} 
-              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-            >
-              <span className="icon">{item.icon}</span>
-              {item.name}
-            </NavLink>
-          ))}
+          {navigation.map((item, index) => {
+            if (item.isHeader) {
+              return <div key={`header-${index}`} className="sidebar-category">{item.name}</div>;
+            }
+            return (
+              <NavLink 
+                key={item.path} 
+                to={item.path} 
+                className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+              >
+                <span className="icon">{item.icon}</span>
+                {item.name}
+              </NavLink>
+            );
+          })}
         </nav>
         <div className="sidebar-footer">
           <button className="btn btn-logout" onClick={() => window.location.href='/'}>Logout</button>
