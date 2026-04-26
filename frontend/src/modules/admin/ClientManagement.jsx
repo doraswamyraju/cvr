@@ -24,7 +24,7 @@ const ClientManagement = () => {
       // In production, pass the token and the backend will extract firm_id.
       // Here we just mock or pass firm_id for demonstration if needed.
       
-      const response = await fetch(`http://localhost/api/clients.php?firm_id=${user?.firm_id || 1}`);
+      const response = await fetch(`/api/clients.php?firm_id=${user?.firm_id || 1}`);
       const data = await response.json();
       if (data.status === 'success') {
         setClients(data.data);
@@ -65,7 +65,7 @@ const ClientManagement = () => {
       
       const payload = { ...formData, firm_id: user?.firm_id || 1 };
       
-      const response = await fetch('http://localhost/api/clients.php', {
+      const response = await fetch('/api/clients.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

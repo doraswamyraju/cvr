@@ -21,7 +21,7 @@ const EmployeeManagement = () => {
       const userStr = localStorage.getItem('user');
       const user = userStr ? JSON.parse(userStr) : null;
       
-      const response = await fetch(`http://localhost/api/employees.php?firm_id=${user?.firm_id || 1}`);
+      const response = await fetch(`/api/employees.php?firm_id=${user?.firm_id || 1}`);
       const data = await response.json();
       if (data.status === 'success') {
         setEmployees(data.data);
@@ -51,7 +51,7 @@ const EmployeeManagement = () => {
       
       const payload = { ...formData, firm_id: user?.firm_id || 1 };
       
-      const response = await fetch('http://localhost/api/employees.php', {
+      const response = await fetch('/api/employees.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

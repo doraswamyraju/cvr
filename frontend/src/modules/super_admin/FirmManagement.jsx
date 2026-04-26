@@ -16,7 +16,7 @@ const FirmManagement = () => {
   const fetchFirms = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost/api/firms.php'); // Mock URL, adjust in production
+      const response = await fetch('/api/firms.php'); // Mock URL, adjust in production
       const data = await response.json();
       if (data.status === 'success') {
         setFirms(data.data);
@@ -44,7 +44,7 @@ const FirmManagement = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await fetch('http://localhost/api/firms.php', {
+      const response = await fetch('/api/firms.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
