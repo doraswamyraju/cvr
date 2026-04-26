@@ -3,6 +3,8 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import DashboardLayout from '../layouts/DashboardLayout';
 import ClientManagement from '../modules/admin/ClientManagement';
 import EmployeeManagement from '../modules/admin/EmployeeManagement';
+import IncomingRegister from '../modules/admin/IncomingRegister';
+import VisitorRegister from '../modules/admin/VisitorRegister';
 // Mock placeholders for the other modules
 const Placeholder = ({ title }) => (
   <div className="card animate-fade-in">
@@ -56,8 +58,8 @@ const AdminDashboard = () => {
         
         {/* CRM */}
         <Route path="clients" element={<ClientManagement />} />
-        <Route path="incoming" element={<Placeholder title="Incoming Register" />} />
-        <Route path="visitors" element={<Placeholder title="Visitor Register" />} />
+        <Route path="incoming" element={<IncomingRegister />} />
+        <Route path="visitors" element={<VisitorRegister />} />
 
         {/* HRMS */}
         <Route path="employees" element={<EmployeeManagement />} />

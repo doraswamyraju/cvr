@@ -85,6 +85,59 @@ CREATE TABLE `employees` (
   CONSTRAINT `employees_user_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------------
+-- Table structure for table `incoming_register`
+-- --------------------------------------------------------
+CREATE TABLE `incoming_register` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `firm_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `sender_name` varchar(255) NOT NULL,
+  `received_by` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `status` enum('received','processed','delivered') DEFAULT 'received',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `firm_id` (`firm_id`),
+  CONSTRAINT `incoming_firm_fk` FOREIGN KEY (`firm_id`) REFERENCES `firms` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+-- Table structure for table `visitor_register`
+-- --------------------------------------------------------
+CREATE TABLE `visitor_register` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `firm_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `visitor_name` varchar(255) NOT NULL,
+  `purpose` varchar(255) DEFAULT NULL,
+  `entry_time` time DEFAULT NULL,
+  `exit_time` time DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `firm_id` (`firm_id`),
+  CONSTRAINT `visitor_firm_fk` FOREIGN KEY (`firm_id`) REFERENCES `firms` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+-- Table structure for table `attendance`
+-- --------------------------------------------------------
+CREATE TABLE `attendance` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `firm_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `check_in` time DEFAULT NULL,
+  `check_out` time DEFAULT NULL,
+  `status` enum('present','absent','late','half_day') DEFAULT 'present',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `firm_id` (`firm_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `attendance_firm_fk` FOREIGN KEY (`firm_id`) REFERENCES `firms` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `attendance_user_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- Insert a default Super Admin for initial login
 INSERT INTO `users` (`firm_id`, `role`, `name`, `email`, `password_hash`, `status`) 
 VALUES (NULL, 'super_admin', 'System Super Admin', 'superadmin@cvr.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'active'); 
