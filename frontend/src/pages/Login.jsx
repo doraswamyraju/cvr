@@ -162,7 +162,7 @@ const logoContainerStyle = {
   borderRadius: '16px',
   display: 'flex',
   alignItems: 'center',
-  justify-content: 'center',
+  justifyContent: 'center',
   color: 'white',
   margin: '0 auto 1.5rem',
   fontSize: '1.75rem',
