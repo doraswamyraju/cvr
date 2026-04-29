@@ -28,7 +28,7 @@ const StatCard = ({ icon, label, value, trend, trendValue, color = 'blue' }) => 
           background: colors.bg, 
           display: 'flex', 
           alignItems: 'center', 
-          justify-content: 'center',
+          justifyContent: 'center',
           fontSize: '1.5rem',
           color: colors.icon
         }}>
