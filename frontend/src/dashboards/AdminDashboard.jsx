@@ -5,6 +5,9 @@ import ClientManagement from '../modules/admin/ClientManagement';
 import EmployeeManagement from '../modules/admin/EmployeeManagement';
 import IncomingRegister from '../modules/admin/IncomingRegister';
 import VisitorRegister from '../modules/admin/VisitorRegister';
+import MasterManagement from '../modules/admin/MasterManagement';
+import AdminOverview from '../modules/admin/AdminOverview';
+
 // Mock placeholders for the other modules
 const Placeholder = ({ title }) => (
   <div className="card animate-fade-in">
@@ -22,6 +25,9 @@ const AdminDashboard = () => {
   const navItems = [
     { name: 'Dashboard', path: '/admin/overview', icon: '🏠' },
     
+    { name: 'Masters Module', isHeader: true },
+    { name: 'Core Masters', path: '/admin/masters', icon: '🛠️' },
+
     { name: 'CRM Module', isHeader: true },
     { name: 'Client Master', path: '/admin/clients', icon: '👥' },
     { name: 'Incoming Register', path: '/admin/incoming', icon: '📥' },
@@ -54,8 +60,11 @@ const AdminDashboard = () => {
         {/* Redirect root to overview */}
         <Route index element={<Navigate to="overview" replace />} />
         
-        <Route path="overview" element={<div className="card"><h2>Admin Overview</h2><p>Welcome to the Admin Dashboard. Select a module from the sidebar.</p></div>} />
+        <Route path="overview" element={<AdminOverview />} />
         
+        {/* Masters */}
+        <Route path="masters" element={<MasterManagement />} />
+
         {/* CRM */}
         <Route path="clients" element={<ClientManagement />} />
         <Route path="incoming" element={<IncomingRegister />} />

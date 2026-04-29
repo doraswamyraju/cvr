@@ -1,38 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Premium Palette */
-  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-  --primary-color: #6366f1;
-  --primary-hover: #4f46e5;
-  --secondary-color: #0ea5e9;
-  --accent-color: #f43f5e;
+  /* Premium Palette - Light Theme */
+  --primary-color: #4c6ef5;
+  --primary-hover: #3b5bdb;
+  --primary-gradient: linear-gradient(135deg, #4c6ef5 0%, #7048e8 100%);
+  --secondary-color: #15aabf;
+  --accent-color: #f03e3e;
   
-  --bg-color: #f8fafc;
+  --bg-color: #f8fafd;
   --surface-color: #ffffff;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
   --text-muted: #94a3b8;
-  --border-color: #e2e8f0;
+  --border-color: #edf2f7;
   --border-light: #f1f5f9;
   
-  /* Sidebar Specific */
-  --sidebar-bg: #0f172a;
-  --sidebar-text: #94a3b8;
-  --sidebar-active-bg: rgba(255, 255, 255, 0.08);
-  --sidebar-active-text: #ffffff;
+  /* Sidebar Specific (Light) */
+  --sidebar-bg: #ffffff;
+  --sidebar-text: #64748b;
+  --sidebar-active-bg: #f1f5f9;
+  --sidebar-active-text: #4c6ef5;
+  --sidebar-hover-bg: #f8fafd;
   
-  /* Modern Shadows */
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 12px -1px rgba(0, 0, 0, 0.05), 0 2px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+  /* Modern Shadows (Softer) */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
   
   /* Radii */
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 2rem;
   
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

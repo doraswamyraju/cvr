@@ -31,7 +31,7 @@ const DashboardLayout = ({ role, navigation }) => {
                 className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
               >
                 <span className="icon">{item.icon}</span>
-                {item.name}
+                <span className="nav-text">{item.name}</span>
               </NavLink>
             );
           })}
@@ -42,27 +42,36 @@ const DashboardLayout = ({ role, navigation }) => {
             localStorage.clear();
             window.location.href='/';
           }}>
-            <span>🚪</span> Logout
+            <span className="icon">🚪</span>
+            <span className="nav-text">Logout</span>
           </button>
         </div>
       </aside>
 
       {/* Main Content Area */}
       <main className="main-content">
-        {/* Top Floating Glass Header */}
+        {/* Top Floating Header */}
         <header className="top-header">
           <div className="header-left">
-            <h1 className="page-title">{role} Portal</h1>
+            <h1 className="page-title">{role === 'Admin' ? 'CVR Association' : `${role} Portal`}</h1>
             <div className="search-bar">
               <span className="search-icon">🔍</span>
-              <input type="text" placeholder="Global Search..." />
+              <input type="text" placeholder="Search enterprise data..." />
             </div>
           </div>
           
           <div className="header-right">
-            <button className="icon-btn">
+            <button className="icon-btn" title="Notifications">
               <span>🔔</span>
               <span className="notification-dot"></span>
+            </button>
+            
+            <button className="icon-btn" title="Help">
+              <span>❓</span>
+            </button>
+
+            <button className="icon-btn" title="Apps">
+              <span>⠿</span>
             </button>
             
             <button className="user-profile-btn">
@@ -71,7 +80,6 @@ const DashboardLayout = ({ role, navigation }) => {
                 <span className="user-name">{user.name}</span>
                 <span className="user-role">{role}</span>
               </div>
-              <span style={{ fontSize: '0.75rem', opacity: 0.5 }}>▼</span>
             </button>
           </div>
         </header>
