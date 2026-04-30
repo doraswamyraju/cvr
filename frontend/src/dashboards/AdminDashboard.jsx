@@ -7,6 +7,26 @@ import IncomingRegister from '../modules/admin/IncomingRegister';
 import VisitorRegister from '../modules/admin/VisitorRegister';
 import MasterManagement from '../modules/admin/MasterManagement';
 import AdminOverview from '../modules/admin/AdminOverview';
+import { 
+  LayoutDashboard, 
+  Settings, 
+  Users, 
+  UserPlus, 
+  UserCheck, 
+  Briefcase, 
+  Calendar, 
+  Plane, 
+  Target, 
+  DollarSign, 
+  ClipboardList, 
+  Bug, 
+  Monitor, 
+  Folder, 
+  MessageSquare, 
+  Wallet, 
+  Building2, 
+  Wrench
+} from 'lucide-react';
 
 // Mock placeholders for the other modules
 const Placeholder = ({ title }) => (
@@ -23,35 +43,35 @@ const Placeholder = ({ title }) => (
 
 const AdminDashboard = () => {
   const navItems = [
-    { name: 'Dashboard', path: '/admin/overview', icon: '🏠' },
+    { name: 'Dashboard', path: '/admin/overview', icon: <LayoutDashboard size={20} /> },
     
     { name: 'Masters Module', isHeader: true },
-    { name: 'Core Masters', path: '/admin/masters', icon: '🛠️' },
+    { name: 'Core Masters', path: '/admin/masters', icon: <Wrench size={20} /> },
 
     { name: 'CRM Module', isHeader: true },
-    { name: 'Client Master', path: '/admin/clients', icon: '👥' },
-    { name: 'Incoming Register', path: '/admin/incoming', icon: '📥' },
-    { name: 'Visitor Register', path: '/admin/visitors', icon: '🚶' },
+    { name: 'Client Master', path: '/admin/clients', icon: <Users size={20} /> },
+    { name: 'Incoming Register', path: '/admin/incoming', icon: <UserPlus size={20} /> },
+    { name: 'Visitor Register', path: '/admin/visitors', icon: <UserCheck size={20} /> },
     
     { name: 'HRMS Module', isHeader: true },
-    { name: 'Employee Master', path: '/admin/employees', icon: '👔' },
-    { name: 'Attendance', path: '/admin/attendance', icon: '📅' },
-    { name: 'Leave Management', path: '/admin/leave', icon: '✈️' },
-    { name: 'Recruitment', path: '/admin/recruitment', icon: '🎯' },
-    { name: 'Payroll', path: '/admin/payroll', icon: '💸' },
+    { name: 'Employee Master', path: '/admin/employees', icon: <Briefcase size={20} /> },
+    { name: 'Attendance', path: '/admin/attendance', icon: <Calendar size={20} /> },
+    { name: 'Leave Management', path: '/admin/leave', icon: <Plane size={20} /> },
+    { name: 'Recruitment', path: '/admin/recruitment', icon: <Target size={20} /> },
+    { name: 'Payroll', path: '/admin/payroll', icon: <DollarSign size={20} /> },
 
     { name: 'ERP Module', isHeader: true },
-    { name: 'Task Management', path: '/admin/tasks', icon: '📋' },
-    { name: 'Issue Tracker', path: '/admin/issues', icon: '🐛' },
-    { name: 'Assets Management', path: '/admin/assets', icon: '💻' },
-    { name: 'File Management', path: '/admin/files', icon: '📁' },
-    { name: 'Communication', path: '/admin/communication', icon: '💬' },
+    { name: 'Task Management', path: '/admin/tasks', icon: <ClipboardList size={20} /> },
+    { name: 'Issue Tracker', path: '/admin/issues', icon: <Bug size={20} /> },
+    { name: 'Assets Management', path: '/admin/assets', icon: <Monitor size={20} /> },
+    { name: 'File Management', path: '/admin/files', icon: <Folder size={20} /> },
+    { name: 'Communication', path: '/admin/communication', icon: <MessageSquare size={20} /> },
 
     { name: 'Finance & Admin', isHeader: true },
-    { name: 'Finance & Accounting', path: '/admin/finance', icon: '💰' },
-    { name: 'Accounts Setup', path: '/admin/accounts-setup', icon: '🏦' },
-    { name: 'General Admin', path: '/admin/general-admin', icon: '🏢' },
-    { name: 'General Setting', path: '/admin/settings', icon: '⚙️' }
+    { name: 'Finance & Accounting', path: '/admin/finance', icon: <Wallet size={20} /> },
+    { name: 'Accounts Setup', path: '/admin/accounts-setup', icon: <Building2 size={20} /> },
+    { name: 'General Admin', path: '/admin/general-admin', icon: <Settings size={20} /> },
+    { name: 'General Setting', path: '/admin/settings', icon: <Settings size={20} /> }
   ];
 
   return (

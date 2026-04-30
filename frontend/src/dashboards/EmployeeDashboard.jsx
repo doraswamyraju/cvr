@@ -1,13 +1,14 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import DashboardLayout from '../layouts/DashboardLayout';
+import { Home, ClipboardList, Calendar, Plane } from 'lucide-react';
 
 const EmployeeDashboard = () => {
   const navItems = [
-    { name: 'Home', path: '/employee', icon: '🏠' },
-    { name: 'My Tasks', path: '/employee/tasks', icon: '📋' },
-    { name: 'Attendance', path: '/employee/attendance', icon: '📅' },
-    { name: 'Leave', path: '/employee/leave', icon: '✈️' }
+    { name: 'Home', path: '/employee', icon: <Home size={20} /> },
+    { name: 'My Tasks', path: '/employee/tasks', icon: <ClipboardList size={20} /> },
+    { name: 'Attendance', path: '/employee/attendance', icon: <Calendar size={20} /> },
+    { name: 'Leave', path: '/employee/leave', icon: <Plane size={20} /> }
   ];
 
   return (

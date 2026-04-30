@@ -1,5 +1,5 @@
-import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import { LogOut, Search, Bell, HelpCircle, LayoutGrid } from 'lucide-react';
 import './DashboardLayout.css';
 
 const DashboardLayout = ({ role, navigation }) => {
@@ -42,7 +42,7 @@ const DashboardLayout = ({ role, navigation }) => {
             localStorage.clear();
             window.location.href='/';
           }}>
-            <span className="icon">🚪</span>
+            <LogOut size={20} className="icon" />
             <span className="nav-text">Logout</span>
           </button>
         </div>
@@ -55,23 +55,23 @@ const DashboardLayout = ({ role, navigation }) => {
           <div className="header-left">
             <h1 className="page-title">{role === 'Admin' ? 'CVR Association' : `${role} Portal`}</h1>
             <div className="search-bar">
-              <span className="search-icon">🔍</span>
+              <Search className="search-icon" size={18} />
               <input type="text" placeholder="Search enterprise data..." />
             </div>
           </div>
           
           <div className="header-right">
             <button className="icon-btn" title="Notifications">
-              <span>🔔</span>
+              <Bell size={20} />
               <span className="notification-dot"></span>
             </button>
             
             <button className="icon-btn" title="Help">
-              <span>❓</span>
+              <HelpCircle size={20} />
             </button>
 
             <button className="icon-btn" title="Apps">
-              <span>⠿</span>
+              <LayoutGrid size={20} />
             </button>
             
             <button className="user-profile-btn">

@@ -2,13 +2,14 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import DashboardLayout from '../layouts/DashboardLayout';
 import FirmManagement from '../modules/super_admin/FirmManagement';
+import { Home, Settings, Monitor, Layers } from 'lucide-react';
 
 const SuperAdminDashboard = () => {
   const navItems = [
-    { name: 'Home', path: '/super-admin', icon: '🏠' },
-    { name: 'Master Setup', path: '/super-admin/master-setup', icon: '⚙️' },
-    { name: 'System Admin', path: '/super-admin/system', icon: '💻' },
-    { name: 'All Modules', path: '/super-admin/modules', icon: '🧩' }
+    { name: 'Home', path: '/super-admin', icon: <Home size={20} /> },
+    { name: 'Master Setup', path: '/super-admin/master-setup', icon: <Settings size={20} /> },
+    { name: 'System Admin', path: '/super-admin/system', icon: <Monitor size={20} /> },
+    { name: 'All Modules', path: '/super-admin/modules', icon: <Layers size={20} /> }
   ];
 
   return (

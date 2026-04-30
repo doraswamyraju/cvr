@@ -1,13 +1,14 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import DashboardLayout from '../layouts/DashboardLayout';
+import { Home, Briefcase, FileText, Headphones } from 'lucide-react';
 
 const ClientDashboard = () => {
   const navItems = [
-    { name: 'Home', path: '/client', icon: '🏠' },
-    { name: 'My Services', path: '/client/services', icon: '🛠️' },
-    { name: 'Invoices', path: '/client/invoices', icon: '🧾' },
-    { name: 'Support', path: '/client/support', icon: '🎧' }
+    { name: 'Home', path: '/client', icon: <Home size={20} /> },
+    { name: 'My Services', path: '/client/services', icon: <Briefcase size={20} /> },
+    { name: 'Invoices', path: '/client/invoices', icon: <FileText size={20} /> },
+    { name: 'Support', path: '/client/support', icon: <Headphones size={20} /> }
   ];
 
   return (
